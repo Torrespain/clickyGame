@@ -1,0 +1,47 @@
+// [, "./images/bender.jpg", "./images/benderFat.jpg","./images/benderHuman.jpg","./images/dog.jpg","./images/fry.jpg","./images/leela.jpg","./images/nibller.jpg","./images/professor.jpg","./images/zapp.jpg","./images/Zoidberg.jpg","./images/alien.png"]
+[
+	{
+		"url" : "./images/bender.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/benderFat.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/benderHuman.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/dog.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/fry.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/leela.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/nibller.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/professor.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/zapp.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/Zoidberg.jpg",
+		"clicked" : "false"
+	},
+	{
+		"url" : "./images/alien.png",
+		"clicked" : "false"
+	}
+]
