@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Images from "./components/Images";
+import Wrapper from "./components/Wrapper";
 import imageHolder from "./imageHolder.json";
 
 class App extends React.Component {
@@ -82,13 +83,13 @@ class App extends React.Component {
     return (
       <Wrapper>
       <h1>Clicky Game</h1>
-      <div>{this.state.score} | {this.state.highScore}</div>
+      <div>Actual Score: {this.state.score} / Highest Score: {this.state.highScore}</div>
       <div className="jumbotron">
         <h2>Click on an images, but dont repeat!</h2>
       </div>
         {this.state.picture.map((picture, index) => (
-          <FriendCard key={index}
-            image={friend.image}
+          <Images key={index}
+            image={picture.image}
             index={index}
             handleClick={(index) => {
               this.handleClick(index);
