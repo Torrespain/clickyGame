@@ -3,6 +3,8 @@ import './App.css';
 import Images from "./components/Images";
 import Wrapper from "./components/Wrapper";
 import imageHolder from "./imageHolder.json";
+import Title from "./components/Title";
+
 
 class App extends React.Component {
  constructor() {
@@ -38,9 +40,9 @@ class App extends React.Component {
     let {picture, score, highScore} = this.state;
 
     if (picture[pic].clicked) {
-      picture = picture.map((friend, pic) => {
-        friend.clicked = false;
-        return friend;
+      picture = picture.map((picture, index) => {
+        picture.clicked = false;
+        return picture;
       });
 
       highScore = score > highScore ? score : highScore;
@@ -61,23 +63,23 @@ class App extends React.Component {
   }
 
 
- render(){
-  console.log(this.mix);
+ // render(){
+ //  console.log(this.mix);
 
-  const emptyArray=[];
+ //  const emptyArray=[];
 
-  this.state.picture.map((image) => {
-     const img = (<img src={image.url} class="pic" onClick={this.pictureClick } ></img>);
-     emptyArray.push(img);
-   });
+ //  this.state.picture.map((image) => {
+ //     const img = (<img src={image.url} class="pic" onClick={this.pictureClick } ></img>);
+ //     emptyArray.push(img);
+ //   });
 
-   return (
-     <div>
-       {emptyArray}
+ //   return (
+ //     <div>
+ //       {emptyArray}
 
-     </div>
-   );
- }
+ //     </div>
+ //   );
+ // }
 
  render() {
     return (
@@ -89,7 +91,7 @@ class App extends React.Component {
       </div>
         {this.state.picture.map((picture, index) => (
           <Images key={index}
-            image={picture.image}
+            image={picture.url}
             index={index}
             handleClick={(index) => {
               this.handleClick(index);
