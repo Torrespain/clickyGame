@@ -3,23 +3,27 @@ import './App.css';
 import imageHolder from "./imageHolder.json";
 
 class App extends React.Component {
- constructor(props) {
-   super(props);
+ constructor() {
+   super();
    this.state = {
-      picture: imageHolder
+      picture: imageHolder,
+      score: 0,
+      highScore: 0
    }
 
-   this.pictureClick = this.pictureClick.bind(this);
-   this.mix = this.mix.bind(this);
+   // this.pictureClick = this.pictureClick.bind(this);
+   // this.mix = this.mix.bind(this);
  }
 
- pictureClick = (url) => {
-   const mixArray = this.mix(this.state.imageHolder);
-   this.setState({imageHolder: mixArray});
-   console.log(this.state.imageHolder);
- }
 
- mix = (array) => {
+
+ // pictureClick = (url) => {
+ //   const mixArray = this.mix(this.state.imageHolder);
+ //   this.setState({imageHolder: mixArray});
+ //   console.log(this.state.imageHolder);
+ // }
+
+ mix(array) {
   for (let i = 0; i < array.length; i++) {
     const position = Math.floor(Math.random() *i);
     [array[i], array[position]] = [array[position], array[i]];
@@ -27,7 +31,35 @@ class App extends React.Component {
   return array;
  }
 
- render = () => {
+ handleClick (pic) {
+
+    let {picture, score, highScore} = this.state;
+
+    if (picture[pic].clicked) {
+      picture = picture.map((friend, pic) => {
+        friend.clicked = false;
+        return friend;
+      });
+
+      highScore = score > highScore ? score : highScore;
+      score = 0;
+    }
+
+    else {
+      picture[pic].clicked = true;
+      score++;
+    } 
+
+    picture = this.mix(picture)
+
+    this.setState({
+      picture, score, highScore
+    })
+
+  }
+
+
+ render(){
   console.log(this.mix);
 
   const emptyArray=[];
@@ -44,6 +76,27 @@ class App extends React.Component {
      </div>
    );
  }
+
+ render() {
+    return (
+      <Wrapper>
+      <h1>Clicky Game</h1>
+      <div>{this.state.score} | {this.state.highScore}</div>
+      <div className="jumbotron">
+        <h2>Click on an image and earn a point, but dont click the same image or GAME OVER</h2>
+      </div>
+        {this.state.picture.map((picture, index) => (
+          <FriendCard key={index}
+            image={friend.image}
+            index={index}
+            handleClick={(index) => {
+              this.handleClick(index);
+            }}
+          />
+        ))}
+      </Wrapper>
+    );
+  }
 }
 
 
