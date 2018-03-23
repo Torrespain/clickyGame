@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Images from "./components/Images";
 import imageHolder from "./imageHolder.json";
 
 class App extends React.Component {
@@ -83,7 +84,7 @@ class App extends React.Component {
       <h1>Clicky Game</h1>
       <div>{this.state.score} | {this.state.highScore}</div>
       <div className="jumbotron">
-        <h2>Click on an image and earn a point, but dont click the same image or GAME OVER</h2>
+        <h2>Click on an images, but dont repeat!</h2>
       </div>
         {this.state.picture.map((picture, index) => (
           <FriendCard key={index}
