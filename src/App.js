@@ -15,17 +15,7 @@ class App extends React.Component {
       highScore: 0
    }
 
-   // this.pictureClick = this.pictureClick.bind(this);
-   // this.mix = this.mix.bind(this);
  }
-
-
-
- // pictureClick = (url) => {
- //   const mixArray = this.mix(this.state.imageHolder);
- //   this.setState({imageHolder: mixArray});
- //   console.log(this.state.imageHolder);
- // }
 
  mix(array) {
   for (let i = 0; i < array.length; i++) {
@@ -62,43 +52,24 @@ class App extends React.Component {
 
   }
 
-
- // render(){
- //  console.log(this.mix);
-
- //  const emptyArray=[];
-
- //  this.state.picture.map((image) => {
- //     const img = (<img src={image.url} class="pic" onClick={this.pictureClick } ></img>);
- //     emptyArray.push(img);
- //   });
-
- //   return (
- //     <div>
- //       {emptyArray}
-
- //     </div>
- //   );
- // }
-
  render() {
     return (
       <Wrapper>
-      <h1>Clicky Game</h1>
-      <div>Actual Score: {this.state.score} / Highest Score: {this.state.highScore}</div>
-      <div className="jumbotron">
-        <h2>Click on an images, but dont repeat!</h2>
-      </div>
-        {this.state.picture.map((picture, index) => (
-          <Images key={index}
-            image={picture.url}
-            index={index}
-            handleClick={(index) => {
-              this.handleClick(index);
-            }}
-          />
-        ))}
-      </Wrapper>
+        <h1>Clicky Game</h1>
+        <div>Actual Score: {this.state.score} / Highest Score: {this.state.highScore}</div>
+        <div className="jumbotron">
+          <h2>Click on an images, but dont repeat!</h2>
+        </div>
+          {this.state.picture.map((picture, index) => (
+            <Images key={index}
+              image={picture.url}
+              index={index}
+              handleClick={(index) => {
+                this.handleClick(index);
+              }}
+            />
+          ))}
+      </Wrapper>  
     );
   }
 }

@@ -11,7 +11,7 @@
 	},
 	{
 		"id": 3,
-		"url" : "./images/benderHuman.jpg",
+		"url" : "./images/benderHuman.png",
 		"clicked" : "false"
 	},
 	{
@@ -52,6 +52,11 @@
 	{
 		"id": 11,
 		"url" : "./images/alien.png",
+		"clicked" : "false"
+	},
+	{
+		"id": 12,
+		"url" : "./images/Amy.png",
 		"clicked" : "false"
 	}
 ]
