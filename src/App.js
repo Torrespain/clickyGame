@@ -54,6 +54,7 @@ class App extends React.Component {
 
  render() {
     return (
+      <div class="container">
       <Wrapper>
         <h1>Clicky Game</h1>
         <div>Actual Score: {this.state.score} / Highest Score: {this.state.highScore}</div>
@@ -69,7 +70,8 @@ class App extends React.Component {
               }}
             />
           ))}
-      </Wrapper>  
+      </Wrapper> 
+      </div>
     );
   }
 }
